@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .pagina{
+            display: grid;
+            grid-template-areas: "tit" "menu" "article" "aside" "footer";
+            row-gap: 1px;
+            grid-template-rows: 40vw 10vw 96vw 35vw 40vw;
+        }
+
+        .cabecalho {
+            grid-area: tit;
+            background-color: #4bade8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .titulo {
+            padding: 10px;
+            text-shadow: 1px 1px 3px white;
+        }
+
+        .logo{
+            width: 72px;
+            
+        }
+        
+        .menuPrincipal {
+            background-color: #E0FCA3;
+            
+            grid-area: menu;
+        }
+        .itensMenu {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .itensMenu li{
+            list-style: none;
+        }
+        .itensMenu li a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .conteudo {
+            background-color: #dce1ed;
+            color: black;
+            grid-area: article;
+        }
+
+        .conteudo_extra {
+            background-color: #5E7A48;
+            color: white;
+            grid-area: aside;
+        }
+
+        .rodape {
+            background-color: #525e90;
+            color: white;
+            grid-area: footer;
+        }
+        
+
+        @media screen and (min-width: 480px){
+            .pagina{
+                grid-template-areas: "tit tit"
+                                     "menu menu"
+                                     "article aside"
+                                     "footer footer";
+                column-gap: 2px;
+                row-gap: 2px;
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 130px 25px 310px 130px;
+            }
+            .cabecalho{
+                flex-direction: row;
+            }
+            .titulo{
+                width: 100%;
+            }
+            
+        }
+        @media screen and (min-width: 1280px){
+            .pagina{
+                grid-template-areas: "tit tit tit"
+                                      "menu article aside"
+                                      "footer footer footer";
+                grid-template-columns: 1fr 4fr 2fr;
+                grid-template-rows: 150px 389px 150px;
+                row-gap: 3px;
+                column-gap: 3px;
+                
+            }
+            .itensMenu{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                
+                align-items: stretch;
+            }
+            
+                
+            
+        }
+    </style>
+</head>
+<body>
+    <main class="pagina">
+        <header class="cabecalho">
+            <img src="logo2.png" alt="Logo" class="logo">
+            <h1 class="titulo">
+                
+                Titulo
+            </h1>
+        </header>
+        <nav class="menuPrincipal">
+            <ul class="itensMenu">
+                <li><a href="">Opção1</a></li>
+                <li><a href="">Opção2</a></li>
+                <li><a href="">Opção3</a></li>
+                <li><a href="">Opção4</a></li>
+            </ul>
+        </nav>
+        <article class="conteudo">
+            Conteúdo da página (ARTICLE)
+        </article>
+        <aside class="conteudo_extra">
+            Conteúdo associado (ASIDE)
+        </aside>
+        <footer class="rodape">
+            Conteúdo do rodapé (FOOTER)
+        </footer>
+
+    </main>
+    
+</body>
+</html>
